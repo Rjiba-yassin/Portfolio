@@ -1,6 +1,6 @@
 import React from 'react';
 import { Github, Linkedin } from 'lucide-react';
-import rjiba from './assetes/rjiba.jpg';
+import rjiba from './assets/rjiba.jpg';
 
 const HeroSection: React.FC = () => {
   return (
