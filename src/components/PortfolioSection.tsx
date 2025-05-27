@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { ArrowUpRight, Github, ChevronLeft, ChevronRight } from 'lucide-react';
-import frontendImage from './assetes/a.jpg';
-import frontendImage1 from './assetes/travel.jpg';
-import frontendImage2 from './assetes/techmalll.jpg';
+import frontendImage from './assets/a.jpg';
+import frontendImage1 from './assets/travel.jpg';
+import frontendImage2 from './assets/techmalll.jpg';
+
 
 
 interface Project {
