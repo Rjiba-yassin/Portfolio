@@ -4,8 +4,6 @@ import frontendImage from './assets/a.jpg';
 import frontendImage1 from './assets/travel.jpg';
 import frontendImage2 from './assets/techmalll.jpg';
 
-
-
 interface Project {
   id: string;
   number: string;
@@ -22,38 +20,41 @@ const projects: Project[] = [
     title: 'Application mobile de gestion des visa',
     description: 'J ai créé une application web et mobile de gestion des visas et des visites, qui automatise les démarches, centralise les documents et améliore la communication pour accélérer le traitement des demandes.',
     technologies: 'Flutter, Dart, Node.js, MongoDB',
-    image: frontendImage  },
+    image: frontendImage
+  },
   {
     id: '02',
     number: '02',
     title: 'Application web de gestion des réservations d’hébergement',
     description: 'Jai développé un site web de réservation en ligne, permettant aux utilisateurs de rechercher, comparer et réserver des hébergements facilement, avec un système de gestion des disponibilités, des paiements et des avis.',
     technologies: 'React, Node.js, MongoDB',
-    image: frontendImage1   },
+    image: frontendImage1
+  },
   {
     id: '03',
     number: '03',
     title: 'Application Web E-commerce',
     description: 'Un site de commerce en ligne offrant la gestion des produits, le panier, le paiement sécurisé, et l’espace client.',
     technologies: 'React, Node.js, MongoDB',
-    image: frontendImage2  }
+    image: frontendImage2
+  }
 ];
 
 const PortfolioSection: React.FC = () => {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
-  
+
   const nextProject = () => {
-    setCurrentProjectIndex((prevIndex) => 
+    setCurrentProjectIndex((prevIndex) =>
       prevIndex === projects.length - 1 ? 0 : prevIndex + 1
     );
   };
-  
+
   const prevProject = () => {
-    setCurrentProjectIndex((prevIndex) => 
+    setCurrentProjectIndex((prevIndex) =>
       prevIndex === 0 ? projects.length - 1 : prevIndex - 1
     );
   };
-  
+
   const currentProject = projects[currentProjectIndex];
 
   return (
@@ -64,7 +65,7 @@ const PortfolioSection: React.FC = () => {
             Latest <span className="text-green-400">Project</span>
           </h2>
         </div>
-        
+
         <div className="flex flex-col lg:flex-row items-center gap-10">
           <div className="lg:w-2/5">
             <div className="text-8xl font-bold opacity-20 text-green-400 mb-4">
@@ -73,47 +74,45 @@ const PortfolioSection: React.FC = () => {
             <h3 className="text-3xl font-bold text-white mb-4">
               {currentProject.title}
             </h3>
-            <p className="text-gray-400 mb-6">
-              {currentProject.description}
-            </p>
+            <p className="text-gray-400 mb-6">{currentProject.description}</p>
             <div className="text-sm text-green-400 mb-8">
               {currentProject.technologies}
             </div>
-            
+
             <div className="flex space-x-4">
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="inline-flex items-center justify-center bg-gray-800 hover:bg-gray-700 w-12 h-12 rounded-full transition-colors duration-300"
               >
                 <ArrowUpRight size={20} className="text-white" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="inline-flex items-center justify-center bg-gray-800 hover:bg-gray-700 w-12 h-12 rounded-full transition-colors duration-300"
               >
                 <Github size={20} className="text-white" />
               </a>
             </div>
           </div>
-          
+
           <div className="lg:w-3/5">
             <div className="relative">
               <div className="bg-gray-800 rounded-lg overflow-hidden">
-                <img 
-                  src={currentProject.image} 
-                  alt={currentProject.title} 
+                <img
+                  src={currentProject.image}
+                  alt={currentProject.title}
                   className="w-full h-auto"
                 />
               </div>
-              
+
               <div className="absolute -bottom-6 right-10 flex space-x-2">
-                <button 
+                <button
                   onClick={prevProject}
                   className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors duration-300"
                 >
                   <ChevronLeft size={20} className="text-white" />
                 </button>
-                <button 
+                <button
                   onClick={nextProject}
                   className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center hover:bg-green-600 transition-colors duration-300"
                 >
